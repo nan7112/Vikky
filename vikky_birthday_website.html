@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Vikky!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#ffe6f0, #fff0f5);
+      text-align: center;
+      padding: 50px;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff4081;
+      margin-bottom: 0;
+    }
+    h2 {
+      color: #555;
+      margin-top: 0.2em;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+    #message {
+      display: none;
+      margin-top: 40px;
+      font-size: 1.2em;
+      white-space: pre-wrap;
+      color: #333;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: pink;
+      top: -10px;
+      animation: fall 3s linear infinite;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday Vikky! 🎂</h1>
+  <h2>5000 miles apart, but forever close at heart — from your Sweeto 💖</h2>
+  <button onclick="showMessage()">🎁 Click Me!</button>
+
+  <div id="message">
+    <p><strong>Dear Vikky,</strong></p>
+    <p>
+      Happy Birthday, my sunshine ☀️<br><br>
+      I may be far away in miles, but today — and every day — my heart is right beside you.<br><br>
+      You have no idea how much your way of talking, your silly jokes, and your laugh mean to me.
+      You make my world lighter, softer, and happier — even through a screen.<br><br>
+      Every little moment we’ve spent together — every call, every joke, every smile — is something I carry with me like a treasure.<br><br>
+      On your special day, I just want to remind you how lucky I feel to love you and be loved by you.<br><br>
+      Here’s to all the memories we’ve made… and the thousands more still waiting.<br><br>
+      Always yours,<br>
+      <strong>Your Sweeto 💖</strong>
+    </p>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://www.youtube.com/embed/ilNt2bikxDI" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+      for (let i = 0; i < 100; i++) {
+        let confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 80%)`;
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 4000);
+      }
+    }
+  </script>
+</body>
+</html>
